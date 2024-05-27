@@ -35,7 +35,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const previewCity = (searchResult) => {
-  console.log(searchResult)
+  // console.log(searchResult)
   const [city, state] = searchResult.place_name.split(',')
   router.push({
     name: 'cityView',
