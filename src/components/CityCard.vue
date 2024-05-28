@@ -4,7 +4,7 @@
   >
     <div class="flex flex-col flex-1">
       <h2 class="text-3xl">{{ city.city }}</h2>
-      <h3>{{ city.state }}</h3>
+      <h3>{{ textWithSpaces }}</h3>
     </div>
 
     <div class="flex flex-col gap-2">
@@ -26,10 +26,16 @@
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   city: {
     type: Object,
     default: () => {},
   },
 });
+
+let textSpace = props.city.state
+const addSpaces = (text) => {
+  return text.replace(/([a-z])([A-Z])/, '$1 $2')
+} 
+let textWithSpaces = addSpaces(textSpace)
 </script>
